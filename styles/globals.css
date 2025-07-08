@@ -1,0 +1,292 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Importar fonte Inter do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Base styles */
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-vita-gray text-vita-dark antialiased;
+  }
+  
+  * {
+    @apply box-border;
+  }
+}
+
+/* Component styles */
+@layer components {
+  /* Botões customizados */
+  .btn-primary {
+    @apply bg-vita-blue hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-vita-green hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  .btn-danger {
+    @apply bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  /* Inputs customizados */
+  .input-primary {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vita-blue focus:border-vita-blue transition-colors;
+  }
+  
+  /* Cards */
+  .card {
+    @apply bg-white rounded-xl shadow-lg p-6;
+  }
+  
+  /* Animações personalizadas */
+  .fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+  
+  /* Estados de loading */
+  .loading-spinner {
+    @apply animate-spin rounded-full h-8 w-8 border-b-2 border-vita-blue;
+  }
+  
+  /* Notificações */
+  .notification-success {
+    @apply bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg;
+  }
+  
+  .notification-error {
+    @apply bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg;
+  }
+  
+  .notification-warning {
+    @apply bg-yellow-50 border border-yellow-200 text-yellow-700 px-4 py-3 rounded-lg;
+  }
+  
+  .notification-info {
+    @apply bg-blue-50 border border-blue-200 text-blue-700 px-4 py-3 rounded-lg;
+  }
+  
+  /* Tabelas responsivas */
+  .table-container {
+    @apply overflow-x-auto shadow ring-1 ring-black ring-opacity-5 rounded-lg;
+  }
+  
+  .table {
+    @apply min-w-full divide-y divide-gray-200;
+  }
+  
+  .table-header {
+    @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50;
+  }
+  
+  .table-cell {
+    @apply px-6 py-4 whitespace-nowrap text-sm text-gray-900;
+  }
+  
+  /* Estados de glicemia */
+  .glycemia-normal {
+    @apply text-green-600 bg-green-50;
+  }
+  
+  .glycemia-low {
+    @apply text-orange-600 bg-orange-50;
+  }
+  
+  .glycemia-high {
+    @apply text-red-600 bg-red-50;
+  }
+  
+  /* Layout responsivo */
+  .container-fluid {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Scrollbar customizada */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-gray-100 rounded-full;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-vita-blue rounded-full;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-blue-600;
+  }
+}
+
+/* Utility classes */
+@layer utilities {
+  /* Backgrounds com opacidade */
+  .bg-vita-blue-10 {
+    background-color: rgba(72, 138, 255, 0.1);
+  }
+  
+  .bg-vita-green-10 {
+    background-color: rgba(76, 175, 80, 0.1);
+  }
+  
+  /* Bordas coloridas */
+  .border-vita-blue-20 {
+    border-color: rgba(72, 138, 255, 0.2);
+  }
+  
+  .border-vita-green-20 {
+    border-color: rgba(76, 175, 80, 0.2);
+  }
+  
+  /* Text gradients */
+  .text-gradient-blue {
+    background: linear-gradient(135deg, #488AFF, #2563eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Sombras personalizadas */
+  .shadow-vita {
+    box-shadow: 0 4px 6px -1px rgba(72, 138, 255, 0.1), 0 2px 4px -1px rgba(72, 138, 255, 0.06);
+  }
+  
+  /* Animações */
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  /* Estados de foco acessíveis */
+  .focus-vita {
+    @apply focus:outline-none focus:ring-2 focus:ring-vita-blue focus:ring-offset-2;
+  }
+  
+  /* Tipografia específica */
+  .text-vita-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  
+  .text-vita-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+  
+  /* Espaçamentos específicos */
+  .space-vita {
+    @apply space-y-6;
+  }
+  
+  /* Print styles */
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    
+    .print-break-before {
+      page-break-before: always;
+    }
+    
+    .print-break-after {
+      page-break-after: always;
+    }
+  }
+}
+
+/* Animações customizadas */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Estados hover para dispositivos com cursor */
+@media (hover: hover) {
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    transition: transform 0.2s ease-out;
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.02);
+    transition: transform 0.2s ease-out;
+  }
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 640px) {
+  .mobile-stack {
+    @apply flex-col space-y-2 space-x-0;
+  }
+  
+  .mobile-full {
+    @apply w-full;
+  }
+  
+  .mobile-text-sm {
+    @apply text-sm;
+  }
+}
+
+/* Estilos para modo escuro (futuro) */
+@media (prefers-color-scheme: dark) {
+  .dark-mode-ready {
+    /* Estilos para modo escuro serão adicionados aqui quando necessário */
+  }
+}
+
+/* Estados de acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .btn-primary {
+    @apply border-2 border-black;
+  }
+  
+  .input-primary {
+    @apply border-2 border-black;
+  }
+}
